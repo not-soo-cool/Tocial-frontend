@@ -34,35 +34,35 @@ export const loginUser = (email, password) => async(dispatch) => {
 
 }
 
-export const registerUser = (name, email, password, username, avatar) => async(dispatch) => {
+// export const registerUser = (name, email, password, username, avatar) => async(dispatch) => {
 
-    try {
+//     try {
 
-        dispatch({
-            type: "RegisterRequest",
-        });
+//         dispatch({
+//             type: "RegisterRequest",
+//         });
 
-        const {data} = await axios.post(`${BASE_URI}/register`, {name, email, password, username, avatar}, {
-            headers:{
-                "Content-Type":"application/json"
-            },
-        });
+//         const {data} = await axios.post(`${BASE_URI}/register`, {name, email, password, username, avatar}, {
+//             headers:{
+//                 "Content-Type":"application/json"
+//             },
+//         });
 
-        // console.log(data);
+//         // console.log(data);
 
-        dispatch({
-            type: "RegisterSuccess",
-            payload: data.user
-        })
+//         dispatch({
+//             type: "RegisterSuccess",
+//             payload: data.user
+//         })
         
-    } catch (error) {
+//     } catch (error) {
 
-        dispatch({
-            type: "RegisterFailure",
-            payload: error.response.data.message
-        }) 
-    }
-}
+//         dispatch({
+//             type: "RegisterFailure",
+//             payload: error.response.data.message
+//         }) 
+//     }
+// }
 
 
 export const logoutUser = () => async(dispatch) => {
@@ -420,35 +420,35 @@ export const followAndUnfollowUser = (id) => async(dispatch) => {
 //     }
 // }
 
-// export const registerUser = (name, email, password, username, avatar) => async(dispatch) => {
+export const registerUser = (name, email, password, username, avatar) => async(dispatch) => {
 
-//     try {
+    try {
 
-//         dispatch({
-//             type: "RegisterRequest",
-//         });
+        dispatch({
+            type: "RegisterRequest",
+        });
 
-//         const {data} = await axios.post("/api/v1/register", {name, email, password, username, avatar}, {
-//             headers:{
-//                 "Content-Type":"application/json"
-//             },
-//         });
+        const {data} = await axios.post("/api/v1/register", {name, email, password, username, avatar}, {
+            headers:{
+                "Content-Type":"application/json"
+            },
+        });
 
-//         // console.log(data);
+        // console.log(data);
 
-//         dispatch({
-//             type: "RegisterSuccess",
-//             payload: data.user
-//         })
+        dispatch({
+            type: "RegisterSuccess",
+            payload: data.user
+        })
         
-//     } catch (error) {
+    } catch (error) {
 
-//         dispatch({
-//             type: "RegisterFailure",
-//             payload: error.response.data.message
-//         }) 
-//     }
-// }
+        dispatch({
+            type: "RegisterFailure",
+            payload: error.response.data.message
+        }) 
+    }
+}
 
 
 // export const logoutUser = () => async(dispatch) => {
