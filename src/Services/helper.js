@@ -1,0 +1,1 @@
+export const BASE_URI = "https://tocial-back.onrender.com/api/v1"
